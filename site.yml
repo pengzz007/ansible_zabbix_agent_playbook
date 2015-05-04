@@ -1,9 +1,14 @@
 ---
 # This playbook deploys zabbix agent
+# run: ansible-playbook -i hosts site.yml --ask-pass --ask-become-pass
 
 - name: configure and deplay zabbix agent
   hosts: all
-  remote_user: root
+  remote_user: lijian
+  become: yes
+  become_user: root
+  become_method: su
+  
 
   roles:
     - zabbix_agent
