@@ -1,0 +1,9 @@
+---
+# This playbook deploys zabbix agent
+
+- name: configure and deplay zabbix agent
+  hosts: all
+  remote_user: root
+
+  roles:
+    - zabbix_agent
