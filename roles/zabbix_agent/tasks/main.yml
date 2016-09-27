@@ -1,4 +1,6 @@
 ---
+#- name: touch test
+#  script: scripts/test.sh
 
 - name: install zabbix rpm key
   rpm_key: key=http://repo.zabbix.com/zabbix-official-repo.key state=present
@@ -7,7 +9,7 @@
   template: src=zabbix.repo.j2 dest=/etc/yum.repos.d/zabbix.repo
 
 - name: install zabbix agent
-  yum: name=zabbix-agent state=present
+  yum: name=zabbix-agent.x86_64 state=present
 
 - name: configure zabbix agent
   template: src=zabbix_agentd.conf.j2 dest=/etc/zabbix/zabbix_agentd.conf

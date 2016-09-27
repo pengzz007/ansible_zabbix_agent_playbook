@@ -4,7 +4,7 @@
 
 - name: configure and deplay zabbix agent
   hosts: all
-  remote_user: lijian
+  remote_user: root
   become: yes
   become_user: root
   become_method: su
